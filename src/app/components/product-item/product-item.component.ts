@@ -5,7 +5,6 @@ import { Product } from '../../models/product.interface';
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
   styleUrl: './product-item.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false
 })
 export class ProductItemComponent {
