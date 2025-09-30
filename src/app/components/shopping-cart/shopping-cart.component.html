@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-header">
+    <h5>Carrinho de Compras</h5>
+  </div>
+  <div class="card-body">
+    <div *ngIf="cartItems.length === 0" class="text-muted">
+      Carrinho vazio
+    </div>
+    <div *ngFor="let item of cartItems" class="d-flex justify-content-between align-items-center mb-2">
+      <span>{{ item.name }}</span>
+      <div>
+        <span class="me-2">R$ {{ item.price.toFixed(2) }}</span>
+        <button class="btn btn-sm btn-danger" (click)="onRemoveItem(item.id)">×</button>
+      </div>
+    </div>
+    <hr *ngIf="cartItems.length > 0">
+    <div *ngIf="cartItems.length > 0" class="d-flex justify-content-between">
+      <strong>Total: R$ {{ getTotalPrice().toFixed(2) }}</strong>
+      <button class="btn btn-sm btn-warning" (click)="onClearCart()">Limpar</button>
+    </div>
+  </div>
+</div>

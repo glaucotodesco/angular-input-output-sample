@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Produtos</h2>
+      <div class="row">
+        <div class="col-md-6" *ngFor="let product of products$ | async">
+          <app-product-item 
+            [product]="product" 
+            (buy)="onProductBuy($event)">
+          </app-product-item>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <app-shopping-cart
+        [cartItems]="cartItems"
+        (removeItem)="onRemoveFromCart($event)"
+        (clearCart)="onClearCart()">
+      </app-shopping-cart>
+    </div>
+  </div>
+</div>
