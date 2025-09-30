@@ -13,8 +13,8 @@ export class ShoppingCartComponent {
   @Output() removeItem = new EventEmitter<number>();
   @Output() clearCart = new EventEmitter<void>();
 
-  onRemoveItem(productId: number): void {
-    this.removeItem.emit(productId);
+  onRemoveItem(index: number): void {
+    this.removeItem.emit(index);
   }
 
   onClearCart(): void {

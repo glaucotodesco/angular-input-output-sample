@@ -10,6 +10,7 @@ import { ProductService } from '../../services/product.service';
   standalone: false
 })
 export class ProductListComponent implements OnInit {
+  
   products$!: Observable<Product[]>;
   cartItems: Product[] = [];
 
@@ -23,8 +24,8 @@ export class ProductListComponent implements OnInit {
     this.cartItems = [...this.cartItems, product];
   }
 
-  onRemoveFromCart(productId: number): void {
-    this.cartItems = this.cartItems.filter(item => item.id !== productId);
+  onRemoveFromCart(index: number): void {
+    this.cartItems = this.cartItems.filter((_, i) => i !== index);
   }
 
   onClearCart(): void {
