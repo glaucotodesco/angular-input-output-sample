@@ -7,7 +7,6 @@ import { ProductService } from '../../services/product.service';
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: false
 })
 export class ProductListComponent implements OnInit {
